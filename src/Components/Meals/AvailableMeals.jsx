@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import MealItem from './MealItem'
 import classes from './AvailableMeals.module.css';
 
 const AvailableMeals = () => {
@@ -27,12 +28,12 @@ const AvailableMeals = () => {
     },[])
 
     const mealsList = meals.map((meal) => (
-        <div className={classes.meal}>
-        {meal.name}
-        {meal.description}
-        {meal.price}
-        <button type="button">Order</button>
-        </div>
+        <MealItem
+        name={meal.name}
+        description={meal.description}
+        price={meal.price}
+        />
+        
     ))
 
     return (
